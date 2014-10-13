@@ -7,7 +7,7 @@
     <module id="View-Web">
         <web>
             <web-uri>View.war</web-uri>
-            <context-root>ViewWeb</context-root>
+            <context-root>view</context-root>
         </web>
     </module>
 </application>
