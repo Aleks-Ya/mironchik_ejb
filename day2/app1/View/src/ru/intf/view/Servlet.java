@@ -1,5 +1,7 @@
 package ru.intf.view;
 
+import org.omg.CORBA.DATA_CONVERSION;
+
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NameClassPair;
@@ -12,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Date;
 
 @WebServlet(urlPatterns = "/s1", loadOnStartup = 10)
 public class Servlet extends HttpServlet {
@@ -35,15 +38,24 @@ public class Servlet extends HttpServlet {
         out.print("<hr/>Thread =" + t);
 
         Context ctx = null;
+        Long c = 0L;
         try {
             ctx = new InitialContext();
-            NamingEnumeration<NameClassPair> ne = ctx.list("java:jboss");
+            try {
+                ctx.bind("java:jboss/counter", c);
+            } catch (Exception e) {
+            }
+            NamingEnumeration<NameClassPair> ne = ctx.list("");
             while (ne.hasMoreElements()) {
                 Object o = ne.nextElement();
                 out.print("<hr/>" + o);
             }
             Object exampleDs = ctx.lookup("java:jboss/datasources/ExampleDS");
             out.print("<hr/>" + exampleDs);
+            c = (Long) ctx.lookup("java:jboss/counter");
+            c++;
+            ctx.rebind("java:jboss/counter", c);
+            out.print("<hr/>" + c);
         } catch (Exception e) {
             e.printStackTrace(out);
         } finally {
