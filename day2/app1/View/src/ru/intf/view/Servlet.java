@@ -1,7 +1,5 @@
 package ru.intf.view;
 
-import org.omg.CORBA.DATA_CONVERSION;
-
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NameClassPair;
@@ -12,9 +10,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.sql.DataSource;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Date;
+import java.sql.Connection;
+import java.sql.SQLException;
 
 @WebServlet(urlPatterns = "/s1", loadOnStartup = 10)
 public class Servlet extends HttpServlet {
@@ -56,6 +56,22 @@ public class Servlet extends HttpServlet {
             c++;
             ctx.rebind("java:jboss/counter", c);
             out.print("<hr/>" + c);
+
+
+            Object o = ctx.lookup("java:/jdbc/postgresql");
+            out.print("<hr/>" + o);
+            DataSource ds = (DataSource) o;
+            Connection conn = null;
+            try {
+                conn = ds.getConnection();
+                out.print("<hr/>" + conn.getMetaData().getDatabaseProductVersion());
+            } catch (SQLException e) {
+                e.printStackTrace(out);
+            } finally {
+                if (conn != null) {
+                    conn.close();
+                }
+            }
         } catch (Exception e) {
             e.printStackTrace(out);
         } finally {
