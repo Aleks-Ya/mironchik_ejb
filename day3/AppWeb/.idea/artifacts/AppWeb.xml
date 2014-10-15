@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="ear" build-on-make="true" name="AppWeb">
+    <output-path>$USER_HOME$/installed/jboss-as-7.1.1.Final/standalone/deployments</output-path>
+    <root id="archive" name="AppWeb.ear">
+      <element id="artifact" artifact-name="AppWeb:ear exploded" />
+    </root>
+  </artifact>
+</component>
