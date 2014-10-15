@@ -1,5 +1,7 @@
 package ru.intf.viewtest;
 
+import ru.intf.model.FacadeRemote;
+
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
@@ -13,6 +15,8 @@ import java.io.PrintWriter;
 
 @WebServlet(urlPatterns = "/s1")
 public class S1 extends HttpServlet {
+    private FacadeRemote f;
+
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
