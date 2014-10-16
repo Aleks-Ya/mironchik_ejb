@@ -22,7 +22,12 @@ public class S1 extends HttpServlet {
         PrintWriter out = response.getWriter();
         out.print("<html>");
         out.print("<hr/>" + f.info());
-
+        out.print("<hr/> Thread :" + Thread.currentThread().getName());
+//        try {
+//            Thread.currentThread().sleep(3000);
+//        } catch (InterruptedException e) {
+//
+//        }
         out.print("<hr/>");
         out.print("</html>");
         out.close();
