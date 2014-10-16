@@ -22,6 +22,15 @@ public class S1 extends HttpServlet {
         PrintWriter out = response.getWriter();
         out.print("<html>");
         out.print("<hr/>");
+        grandFather(out);
+        out.print("</html>");
+        out.close();
+    }
+
+    /**
+     * Дедовский способ доступа к JNDI-каталогу.
+     */
+    private void grandFather(PrintWriter out) {
         Context ctx;
         try {
             ctx = new InitialContext();
@@ -30,9 +39,7 @@ public class S1 extends HttpServlet {
 //            Object o = ctx.lookup("java:module/Facade!ru.intf.model.FacadeRemote");//NameNotFoundException
             out.print("<hr/>" + o);
         } catch (NamingException e) {
-            out.print("<hr/>Error: "+ e);
+            out.print("<hr/>Error: " + e);
         }
-        out.print("</html>");
-        out.close();
     }
 }
