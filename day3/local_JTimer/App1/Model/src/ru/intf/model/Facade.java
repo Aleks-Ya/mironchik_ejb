@@ -1,6 +1,7 @@
 package ru.intf.model;
 
 import javax.annotation.Resource;
+import javax.ejb.EJB;
 import javax.ejb.SessionContext;
 import javax.ejb.Stateless;
 import javax.ejb.Timeout;
@@ -15,6 +16,9 @@ public class Facade implements FacadeLocal {
 
     @Resource
     private SessionContext sess;
+
+    @EJB
+    private WorkAsynchLocal w;
 
     @Override
     public void startJob() {
@@ -33,6 +37,12 @@ public class Facade implements FacadeLocal {
         for (Timer timer : a) {
             timer.cancel();
         }
+    }
+
+    @Override
+    public String testAsynch() {
+        w.info1();
+        return "Метод выполнен";
     }
 
     @Timeout

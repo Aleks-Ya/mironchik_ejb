@@ -6,4 +6,5 @@ import javax.ejb.Local;
 public interface FacadeLocal {
     void startJob();
     void stopJob();
+    String testAsynch();
 }
