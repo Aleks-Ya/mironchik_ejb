@@ -11,8 +11,11 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet(urlPatterns = "/s3")
-public class SAsynch extends HttpServlet {
+/**
+ * Асинхронный вызов метода EJB-бина (без возвращаемого значения).
+ */
+@WebServlet(urlPatterns = "/s3void")
+public class SAsyncVoid extends HttpServlet {
 
     @EJB
     private FacadeLocal f;

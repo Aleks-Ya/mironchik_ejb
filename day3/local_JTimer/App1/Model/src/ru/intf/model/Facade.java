@@ -9,6 +9,10 @@ import javax.ejb.Timer;
 import javax.ejb.TimerHandle;
 import java.util.Collection;
 import java.util.Date;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 
 @Stateless
 public class Facade implements FacadeLocal {
@@ -43,6 +47,22 @@ public class Facade implements FacadeLocal {
     public String testAsynch() {
         w.info1();
         return "Метод выполнен";
+    }
+
+    @Override
+    public String testAsynchWithFuture() {
+        Future f = w.infoWithFuture();
+        try {
+//            Person p = (Person) f.get();
+            Person p = (Person) f.get(4, TimeUnit.SECONDS);
+            return String.format("Метод выполнен: %s %s %s", p.getFn(), p.getSn(), p.getInfo());
+        } catch (InterruptedException e) {
+            return e.toString();
+        } catch (ExecutionException e) {
+            return e.toString();
+        } catch (TimeoutException e) {
+            return "Время истекло";
+        }
     }
 
     @Timeout
