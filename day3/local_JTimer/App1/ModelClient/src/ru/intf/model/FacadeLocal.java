@@ -11,4 +11,6 @@ public interface FacadeLocal {
     String testAsynch();
 
     String testAsynchWithFuture();
+
+    String noInterface(int c);
 }

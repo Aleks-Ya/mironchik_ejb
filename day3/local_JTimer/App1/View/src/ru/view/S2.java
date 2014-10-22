@@ -1,3 +1,5 @@
+package ru.view;
+
 import ru.intf.model.FacadeLocal;
 
 import javax.ejb.EJB;
@@ -9,8 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet(urlPatterns = "/s1")
-public class S1 extends HttpServlet {
+@WebServlet(urlPatterns = "/s2")
+public class S2 extends HttpServlet {
 
     @EJB
     private FacadeLocal f;
@@ -21,8 +23,8 @@ public class S1 extends HttpServlet {
         PrintWriter out = response.getWriter();
         out.print("<html>");
         out.print("<hr/>");
-        f.startJob();
-        out.print("Задание запущено");
+        f.stopJob();
+        out.print("Задание остановлено");
         out.print("</html>");
         out.close();
     }

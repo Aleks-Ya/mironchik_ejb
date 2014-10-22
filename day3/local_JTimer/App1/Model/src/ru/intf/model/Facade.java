@@ -24,6 +24,9 @@ public class Facade implements FacadeLocal {
     @EJB
     private WorkAsynchLocal w;
 
+    @EJB
+    private WorkNoInterface wn;
+
     @Override
     public void startJob() {
         if (th == null) {
@@ -70,5 +73,10 @@ public class Facade implements FacadeLocal {
         if (t.getInfo().equals("TimerJob")) {
             System.out.println("---------------- " + new Date());
         }
+    }
+
+    @Override
+    public String noInterface(int c) {
+        return wn.info(c);
     }
 }
