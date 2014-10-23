@@ -1,5 +1,6 @@
 package ru.view;
 
+import ru.intf.model.FacadeFullLocal;
 import ru.intf.model.FacadeLocal;
 
 import javax.ejb.EJB;
@@ -17,6 +18,9 @@ public class S1 extends HttpServlet {
     @EJB
     private FacadeLocal f;
 
+    @EJB
+    private FacadeFullLocal fl;
+
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -25,6 +29,8 @@ public class S1 extends HttpServlet {
         out.print("<hr/>");
         f.startJob();
         out.print("Задание запущено");
+        fl.info();
+        fl.myRemove();
         out.print("</html>");
         out.close();
     }
