@@ -6,8 +6,11 @@ import javax.ejb.PostActivate;
 import javax.ejb.PrePassivate;
 import javax.ejb.Remove;
 import javax.ejb.Stateful;
+import javax.ejb.StatefulTimeout;
+import java.util.concurrent.TimeUnit;
 
 @Stateful
+@StatefulTimeout(value = 5, unit = TimeUnit.MINUTES)
 public class FacadeFul implements FacadeFulLocal {
     private long id;
     private int counter;

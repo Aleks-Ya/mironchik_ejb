@@ -5,6 +5,8 @@
       <root url="jar://$PROJECT_DIR$/Model/lib/javax.ejb-api.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES />
+    <SOURCES>
+      <root url="jar:///usr/lib/jvm/java-7-oracle/src.zip!/" />
+    </SOURCES>
   </library>
 </component>
