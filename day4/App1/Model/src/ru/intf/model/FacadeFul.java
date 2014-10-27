@@ -10,6 +10,7 @@ import javax.ejb.Stateful;
 @Stateful
 public class FacadeFul implements FacadeFulLocal {
     private long id;
+    private int counter;
 
     @Override
     @Remove
@@ -19,8 +20,9 @@ public class FacadeFul implements FacadeFulLocal {
 
     @Override
     public String info() {
+        counter++;
         System.out.println("------------ INFO " + id);
-        return "Привет, Stateful Bean";
+        return "Привет, id=" + id + ", counter=" + counter;
     }
 
     @PostConstruct

@@ -2,7 +2,6 @@ package ru.intf.view;
 
 import ru.intf.model.FacadeFulLocal;
 
-import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,8 +14,8 @@ import java.util.Date;
 
 @WebServlet("s1")
 public class S1 extends HttpServlet {
-    @EJB
-    private FacadeFulLocal f;
+//    @EJB
+//    private FacadeFulLocal f;
 
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse response) throws ServletException, IOException {
@@ -29,6 +28,11 @@ public class S1 extends HttpServlet {
         out.print("<hr/> Session isNew=" + sess.isNew());
         out.print("<hr/> Creation time=" + new Date(sess.getCreationTime()));
         out.print("<hr/> Last access time=" + new Date(sess.getLastAccessedTime()));
+        out.print("<hr/>");
+        FacadeFulLocal f = (FacadeFulLocal) sess.getAttribute("facade");
+        if (f != null) {
+            out.print("<hr/>" + f.info());
+        }
 
         out.print("</html>");
         out.close();
