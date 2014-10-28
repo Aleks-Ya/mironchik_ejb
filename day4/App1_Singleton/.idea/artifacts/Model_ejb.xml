@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="ejb-jar" build-on-make="true" name="Model:ejb">
+    <output-path>$PROJECT_DIR$/out/artifacts/Model_ejb</output-path>
+    <root id="archive" name="Model_ejb.jar">
+      <element id="artifact" artifact-name="Model:ejb exploded" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="EJB" type="EJB">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/installed/jboss-as-7.1.1.Final/modules/javax/ejb/api/main/jboss-ejb-api_3.1_spec-1.0.1.Final.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

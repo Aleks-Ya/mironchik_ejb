@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="ear" build-on-make="true" name="App1">
+    <output-path>$USER_HOME$/installed/jboss-as-7.1.1.Final/standalone/deployments</output-path>
+    <root id="archive" name="App1.ear">
+      <element id="artifact" artifact-name="App1_Singleton:ear exploded" />
+    </root>
+  </artifact>
+</component>
