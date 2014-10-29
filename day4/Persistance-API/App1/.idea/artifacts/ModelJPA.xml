@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="ModelJPA">
+    <output-path>$PROJECT_DIR$/out/artifacts/ModelJPA</output-path>
+    <root id="archive" name="ModelJPA.jar">
+      <element id="module-output" name="ModelJPA" />
+      <element id="jpa-descriptors" facet="ModelJPA/jpa/JPA" />
+    </root>
+  </artifact>
+</component>
