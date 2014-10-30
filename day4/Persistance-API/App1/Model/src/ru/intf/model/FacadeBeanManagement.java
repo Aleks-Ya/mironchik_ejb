@@ -13,10 +13,12 @@ import javax.transaction.RollbackException;
 import javax.transaction.SystemException;
 import javax.transaction.UserTransaction;
 
+/**
+ * Транзакциями управляет сам бин.
+ */
 @Stateless
-//@TransactionManagement(TransactionManagementType.CONTAINER)//По-умолчанию
 @TransactionManagement(TransactionManagementType.BEAN)
-public class Facade implements FacadeLocal {
+public class FacadeBeanManagement implements FacadeBeanManagementLocal {
     @PersistenceContext(unitName = "Model")
     private EntityManager em;
 
@@ -37,7 +39,8 @@ public class Facade implements FacadeLocal {
 
             tx.commit();
             TxInfo.txPrintInfo(tx);
-        } catch (NotSupportedException | SystemException | HeuristicRollbackException | RollbackException | HeuristicMixedException | ArithmeticException e) {
+        } catch (NotSupportedException | SystemException | HeuristicRollbackException
+                | RollbackException | HeuristicMixedException | ArithmeticException e) {
             System.out.println("Error " + e);
             try {
                 tx.rollback();

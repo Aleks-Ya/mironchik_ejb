@@ -1,6 +1,6 @@
 package ru.intf.view;
 
-import ru.intf.model.FacadeLocal;
+import ru.intf.model.FacadeBeanManagementLocal;
 
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
@@ -11,10 +11,13 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet(urlPatterns = "s1")
-public class S1 extends HttpServlet {
+/**
+ * Вызывает бин, самостоятельно управляющий своей транзакцией.
+ */
+@WebServlet(urlPatterns = "bean")
+public class SBeanManagement extends HttpServlet {
     @EJB
-    private FacadeLocal f;
+    private FacadeBeanManagementLocal f;
 
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

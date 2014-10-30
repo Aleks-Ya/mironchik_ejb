@@ -3,6 +3,6 @@ package ru.intf.model;
 import javax.ejb.Local;
 
 @Local
-public interface FacadeLocal {
+public interface FacadeBeanManagementLocal {
     String info();
 }
