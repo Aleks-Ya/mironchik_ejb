@@ -23,4 +23,9 @@ public class FacadeContainerManagement implements FacadeContainerManagementLocal
         int c = emDDL.createNativeQuery(sql).executeUpdate();
         System.out.println("Обработано " + c);
     }
+
+    @Override
+    public Object[] getUserTables() {
+        return emXA.createNativeQuery("SELECT * FROM pg_catalog.pg_tables").getResultList().toArray();
+    }
 }

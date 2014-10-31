@@ -6,4 +6,8 @@ import javax.ejb.Local;
 public interface FacadeContainerManagementLocal {
     void execSQL(String sql) throws Exception;
 
+    /**
+     * Возвращает информацию о таблицах БД.
+     */
+    Object[] getUserTables();
 }
