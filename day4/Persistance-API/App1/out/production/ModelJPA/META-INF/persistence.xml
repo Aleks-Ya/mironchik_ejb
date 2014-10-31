@@ -4,6 +4,7 @@
     <!-- Двуфазный коммит -->
     <persistence-unit name="ModelXA">
         <jta-data-source>java:/jdbc/postgres-xa</jta-data-source>
+        <class>ru.intf.model.orm.Person</class>
     </persistence-unit>
 
     <!-- Однофазный коммит -->

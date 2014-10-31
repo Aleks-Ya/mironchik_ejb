@@ -27,7 +27,7 @@ public class SGetUserTables extends HttpServlet {
         out.print("<html>");
         Object[] all = f.getUserTables();
         for (Object table : all) {
-            final Object tableName = ((Object[]) table)[0];
+            final Object tableName = ((Object[]) table)[1];
             out.print("<hr/>" + tableName);
         }
         out.print("</html>");
