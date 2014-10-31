@@ -19,7 +19,7 @@ import javax.transaction.UserTransaction;
 @Stateless
 @TransactionManagement(TransactionManagementType.BEAN)
 public class FacadeBeanManagement implements FacadeBeanManagementLocal {
-    @PersistenceContext(unitName = "Model")
+    @PersistenceContext(unitName = "ModelXA")
     private EntityManager em;
 
     @Resource

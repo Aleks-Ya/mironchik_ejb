@@ -12,12 +12,15 @@ import javax.persistence.PersistenceContext;
 @Stateless
 @TransactionManagement(TransactionManagementType.CONTAINER)//По-умолчанию
 public class FacadeContainerManagement implements FacadeContainerManagementLocal {
-    @PersistenceContext(unitName = "Model")
-    private EntityManager em;
+    @PersistenceContext(unitName = "ModelDDL")
+    private EntityManager emDDL;
+
+    @PersistenceContext(unitName = "ModelXA")
+    private EntityManager emXA;
 
     @Override
     public void execSQL(String sql) throws Exception {
-        int c = em.createNativeQuery(sql).executeUpdate();
+        int c = emDDL.createNativeQuery(sql).executeUpdate();
         System.out.println("Обработано " + c);
     }
 }

@@ -26,7 +26,8 @@ public class SContainerManagement extends HttpServlet {
         PrintWriter out = resp.getWriter();
         out.print("<html>");
         try {
-            f.execSQL("commit");
+            f.execSQL("insert into t1 values (1); commit");
+//            f.execSQL("commit");
         } catch (Exception e) {
             out.print("<hr/>" + e);
         }
