@@ -19,7 +19,8 @@
     <orderEntry type="library" scope="PROVIDED" name="jboss-ejb-api_3.1_spec-1.0.1.Final" level="application" />
     <orderEntry type="module" module-name="ModelClient" />
     <orderEntry type="library" scope="PROVIDED" name="jboss-transaction-api_1.1_spec-1.0.0.Final" level="application" />
-    <orderEntry type="library" name="hibernate-jpa-2.0-api-1.0.1.Final" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="hibernate-jpa-2.0-api-1.0.1.Final" level="application" />
+    <orderEntry type="module" module-name="ModelJPA" />
   </component>
 </module>
 

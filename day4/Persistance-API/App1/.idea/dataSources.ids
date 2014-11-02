@@ -2324,10 +2324,13 @@
       <column name="viewowner" sqlType="name" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
       <column name="definition" sqlType="text" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
     </table>
-    <table name="t1" schema="public" catalog="mironchik2" type="TABLE">
-      <column name="key" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
+    <table name="emp" schema="public" catalog="mironchik2" type="TABLE">
+      <column name="empno" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="ename" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+      <column name="job" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+      <column name="sel" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <primary-key name="emp_pkey" columns="empno"/>
     </table>
-    <table name="tab" schema="public" catalog="mironchik2" type="TABLE"/>
     <procedure name="_pg_char_max_length" schema="information_schema" catalog="mironchik2" type="2">
       <prototype>
         <parameter name="typid" sqlType="oid" precision="0" scale="0" nullable="true" jdbcType="-5" type="1" index="1"/>
@@ -12804,7 +12807,7 @@
     <procedure name="pg_identify_object" schema="pg_catalog" catalog="mironchik2" type="2" remarks="Z2V0IG1hY2hpbmUtcGFyc2VhYmxlIGlkZW50aWZpY2F0aW9uIG9mIFNRTCBvYmplY3Q=">
       <prototype>
         <parameter name="classid" sqlType="oid" precision="0" scale="0" nullable="true" jdbcType="-5" type="1" index="1"/>
-        <parameter name="objid" sqlType="int4" precision="0" scale="0" nullable="true" jdbcType="4" type="1" index="2"/>
+        <parameter name="objid" sqlType="oid" precision="0" scale="0" nullable="true" jdbcType="-5" type="1" index="2"/>
         <parameter name="subobjid" sqlType="int4" precision="0" scale="0" nullable="true" jdbcType="4" type="1" index="3"/>
         <parameter name="type" sqlType="text" precision="0" scale="0" nullable="true" jdbcType="12" type="4" index="4"/>
         <parameter name="schema" sqlType="text" precision="0" scale="0" nullable="true" jdbcType="12" type="4" index="5"/>
@@ -13034,7 +13037,7 @@
     </procedure>
     <procedure name="pg_sequence_parameters" schema="pg_catalog" catalog="mironchik2" type="2" remarks="c2VxdWVuY2UgcGFyYW1ldGVycywgZm9yIHVzZSBieSBpbmZvcm1hdGlvbiBzY2hlbWE=">
       <prototype>
-        <parameter name="sequence_oid" sqlType="int4" precision="0" scale="0" nullable="true" jdbcType="4" type="1" index="1"/>
+        <parameter name="sequence_oid" sqlType="oid" precision="0" scale="0" nullable="true" jdbcType="-5" type="1" index="1"/>
         <parameter name="start_value" sqlType="int8" precision="0" scale="0" nullable="true" jdbcType="-5" type="4" index="2"/>
         <parameter name="minimum_value" sqlType="int8" precision="0" scale="0" nullable="true" jdbcType="-5" type="4" index="3"/>
         <parameter name="maximum_value" sqlType="int8" precision="0" scale="0" nullable="true" jdbcType="-5" type="4" index="4"/>

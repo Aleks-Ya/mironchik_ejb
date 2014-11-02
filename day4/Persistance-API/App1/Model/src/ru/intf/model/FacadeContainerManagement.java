@@ -1,10 +1,13 @@
 package ru.intf.model;
 
+import ru.intf.model.orm.Person;
+
 import javax.ejb.Stateless;
 import javax.ejb.TransactionManagement;
 import javax.ejb.TransactionManagementType;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import java.util.List;
 
 /**
  * Транзакциями управляет контейнер.
@@ -27,5 +30,10 @@ public class FacadeContainerManagement implements FacadeContainerManagementLocal
     @Override
     public Object[] getUserTables() {
         return emXA.createNativeQuery("SELECT * FROM pg_catalog.pg_tables").getResultList().toArray();
+    }
+
+    @Override
+    public List<Person> getPersons() {
+        return emXA.createNativeQuery("SELECT ename, job, sel, empno FROM emp", Person.class).getResultList();
     }
 }
