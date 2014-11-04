@@ -12,11 +12,15 @@ import java.math.BigInteger;
     empno INT PRIMARY KEY,
     ename VARCHAR,
     job VARCHAR,
-    sel INT
+    sal INT,
+    deptno INT,
+    CONSTRAINT deptno_fk
+    FOREIGN KEY(deptno)
+    REFERENCES dept(deptno)
  );
- INSERT INTO emp (empno, ename, job, sel) VALUES (1, 'Вася', 'Директор', 1000000);
- INSERT INTO emp (empno, ename, job, sel) VALUES (2, 'Петя', 'Замдиректора', 500000);
- INSERT INTO emp (empno, ename, job, sel) VALUES (3, 'Маша', 'Секретарь', 100000);
+ INSERT INTO emp (empno, ename, job, sal, deptno) VALUES (1, 'Вася', 'Директор', 1000000, 1);
+ INSERT INTO emp (empno, ename, job, sal, deptno) VALUES (2, 'Петя', 'Замдиректора', 500000, 2);
+ INSERT INTO emp (empno, ename, job, sal, deptno) VALUES (3, 'Маша', 'Секретарь', 100000, 2);
  */
 @Entity(name = "Person")
 @Table(name = "EMP")
@@ -27,7 +31,7 @@ public class Person implements Serializable {
     @Id
     @Column(name = "EMPNO")
     private Long id;
-    @Column(name = "SEL")
+    @Column(name = "SAL")
     private BigInteger salary;
 
     public String getName() {
