@@ -25,12 +25,15 @@ import java.math.BigInteger;
 @Entity(name = "Person")
 @Table(name = "EMP")
 public class Person implements Serializable {
-    @Column(name = "ENAME")
-    private String name;
-    private String job;
     @Id
     @Column(name = "EMPNO")
     private Long id;
+
+    @Column(name = "ENAME")
+    private String name;
+
+    private String job;
+
     @Column(name = "SAL")
     private BigInteger salary;
 

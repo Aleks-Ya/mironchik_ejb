@@ -1,5 +1,5 @@
 <component name="ArtifactManager">
-  <artifact type="jar" name="ModelClient">
+  <artifact type="jar" build-on-make="true" name="ModelClient">
     <output-path>$PROJECT_DIR$/out/artifacts/ModelClient</output-path>
     <root id="archive" name="ModelClient.jar">
       <element id="module-output" name="ModelClient" />
