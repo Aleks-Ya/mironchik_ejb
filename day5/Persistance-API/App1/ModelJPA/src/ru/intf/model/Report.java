@@ -1,9 +1,6 @@
 package ru.intf.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.PostLoad;
-import javax.persistence.Transient;
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
@@ -19,11 +16,6 @@ public class Report implements Serializable {
 
     @Transient
     private Long allSal;
-
-    @PostLoad
-    void fillAllSalary() {
-        allSal = sal * 12;
-    }
 
     public String getDname() {
         return dname;
@@ -63,6 +55,11 @@ public class Report implements Serializable {
 
     public void setAllSal(Long allSal) {
         this.allSal = allSal;
+    }
+
+    @PostLoad
+    private void checkAllSale() {
+        allSal = getSal() * 12;
     }
 
     @Override

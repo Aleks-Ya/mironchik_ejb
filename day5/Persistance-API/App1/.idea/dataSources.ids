@@ -21,9 +21,5 @@
       <primary-key name="emp_pkey" columns="empno"/>
       <foreign-key name="deptno_fk" columns="deptno" ref-table="dept" ref-schema="public" ref-catalog="" ref-columns="deptno" update-rule="3" delete-rule="3" deferrability="2"/>
     </table>
-    <table name="t1" schema="public" catalog="mironchik2" type="TABLE">
-      <column name="key" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
-    </table>
-    <table name="tab" schema="public" catalog="mironchik2" type="TABLE"/>
   </data-source>
 </component>

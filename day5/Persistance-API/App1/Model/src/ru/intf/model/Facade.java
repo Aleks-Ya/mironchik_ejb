@@ -13,7 +13,7 @@ public class Facade implements FacadeLocal {
     @Override
     public List<Report> getReports(int id) {
         return em.createNativeQuery("SELECT dname, ename, job, sal FROM emp, dept " +
-                "WHERE emp.deptno = dept.deptno AND dept.deptno=?", Report.class)
+                "WHERE emp.deptno = dept.deptno AND dept.deptno=? FOR UPDATE NOWAIT", Report.class)
                 .setParameter(1, id)
                 .getResultList();
     }
