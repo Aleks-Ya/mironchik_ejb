@@ -2,27 +2,28 @@ package ru.intf.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.PostLoad;
 import javax.persistence.Transient;
 import java.io.Serializable;
 
 @Entity
-@Table(name="t1")
 public class Report implements Serializable {
-    @Transient
-    private String dname;
-
     @Id
     private String ename;
 
-    @Transient
+    private String dname;
+
     private String job;
 
-    @Transient
     private Long sal;
 
     @Transient
     private Long allSal;
+
+    @PostLoad
+    void fillAllSalary() {
+        allSal = sal * 12;
+    }
 
     public String getDname() {
         return dname;
