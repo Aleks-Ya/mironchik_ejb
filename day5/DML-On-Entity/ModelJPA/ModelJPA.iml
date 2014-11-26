@@ -6,9 +6,10 @@
         <setting name="validation-enabled" value="true" />
         <setting name="provider-name" value="" />
         <datasource-mapping>
+          <factory-entry name="PostgreSQLxa" value="a5fca557-bc90-490f-ba0a-637c736a172e" />
           <factory-entry name="noname-persistence.xml@177" value="a5fca557-bc90-490f-ba0a-637c736a172e" />
         </datasource-mapping>
-        <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/src/META-INF/persistence.xml" />
+        <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/META-INF/persistence.xml" />
       </configuration>
     </facet>
   </component>
@@ -19,7 +20,6 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" scope="PROVIDED" name="JBoss 7.1.1.Final" level="application_server_libraries" />
-    <orderEntry type="library" name="Java EE 6" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="hibernate" level="project" />
   </component>
 </module>

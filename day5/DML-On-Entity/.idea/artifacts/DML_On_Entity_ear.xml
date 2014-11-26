@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="ear" build-on-make="true" name="DML-On-Entity:ear">
+    <output-path>$PROJECT_DIR$/out/artifacts/DML_On_Entity_ear</output-path>
+    <root id="archive" name="DML-On-Entity_ear.ear">
+      <element id="artifact" artifact-name="DML-On-Entity:ear exploded" />
+    </root>
+  </artifact>
+</component>

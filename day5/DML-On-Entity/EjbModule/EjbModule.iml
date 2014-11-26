@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="JAVA_MODULE" version="4">
   <component name="FacetManager">
-    <facet type="javaeeApplication" name="javaEEApplication">
+    <facet type="ejb" name="EJB">
       <configuration>
-        <descriptors>
-          <deploymentDescriptor name="application.xml" url="file://$MODULE_DIR$/META-INF/application.xml" />
-        </descriptors>
+        <ejbRoots>
+          <root url="file://$MODULE_DIR$/src" />
+        </ejbRoots>
       </configuration>
     </facet>
   </component>
@@ -16,5 +16,9 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="ModelClient" />
+    <orderEntry type="module" module-name="ModelJPA" />
+    <orderEntry type="library" scope="PROVIDED" name="hibernate" level="project" />
+    <orderEntry type="library" name="jboss-ejb-api_3.1_spec-1.0.1.Final" level="project" />
   </component>
 </module>

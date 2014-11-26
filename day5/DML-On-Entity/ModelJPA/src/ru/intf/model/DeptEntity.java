@@ -1,13 +1,22 @@
 package ru.intf.model;
 
-import javax.persistence.*;
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import java.util.Collection;
 
-/**
- * Created by aleks on 26.11.14.
- */
 @Entity
 @Table(name = "dept", schema = "public", catalog = "mironchik2")
+@NamedQueries({
+        @NamedQuery(
+                name = "dept.getAll",
+                query = "SELECT deptno, dname, empsByDeptno FROM DeptEntity")
+})
 public class DeptEntity {
     private Integer deptno;
     private String dname;
@@ -60,5 +69,14 @@ public class DeptEntity {
 
     public void setEmpsByDeptno(Collection<EmpEntity> empsByDeptno) {
         this.empsByDeptno = empsByDeptno;
+    }
+
+    @Override
+    public String toString() {
+        return "DeptEntity{" +
+                "deptno=" + deptno +
+                ", dname='" + dname + '\'' +
+                ", empsByDeptno=" + empsByDeptno.size() +
+                '}';
     }
 }

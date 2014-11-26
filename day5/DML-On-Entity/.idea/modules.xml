@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/DML-On-Entity.iml" filepath="$PROJECT_DIR$/DML-On-Entity.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EjbModule/EjbModule.iml" filepath="$PROJECT_DIR$/EjbModule/EjbModule.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ModelClient/ModelClient.iml" filepath="$PROJECT_DIR$/ModelClient/ModelClient.iml" />
       <module fileurl="file://$PROJECT_DIR$/ModelJPA/ModelJPA.iml" filepath="$PROJECT_DIR$/ModelJPA/ModelJPA.iml" />
     </modules>
   </component>
