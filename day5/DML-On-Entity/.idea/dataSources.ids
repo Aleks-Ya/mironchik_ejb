@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="mironchik2" uuid="a5fca557-bc90-490f-ba0a-637c736a172e">
+    <database-info product="PostgreSQL" version="9.3.5" jdbc-version="4.0" driver-name="PostgreSQL Native Driver" driver-version="PostgreSQL 9.3 JDBC4.1 (build 1102)">
+      <identifier-quote-string>&quot;</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact"/>
+    <schema name="public" catalog="mironchik2"/>
+    <table name="dept" schema="public" catalog="mironchik2" type="TABLE">
+      <column name="deptno" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="dname" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="dept_pkey" columns="deptno"/>
+      <exported-key name="deptno_fk" table="emp" schema="public" catalog="mironchik2" columns="deptno"/>
+    </table>
+    <table name="emp" schema="public" catalog="mironchik2" type="TABLE">
+      <column name="empno" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="ename" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+      <column name="job" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+      <column name="sal" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="deptno" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <primary-key name="emp_pkey" columns="empno"/>
+      <foreign-key name="deptno_fk" columns="deptno" ref-table="dept" ref-schema="public" ref-catalog="" ref-columns="deptno" update-rule="3" delete-rule="3" deferrability="2"/>
+    </table>
+  </data-source>
+</component>
