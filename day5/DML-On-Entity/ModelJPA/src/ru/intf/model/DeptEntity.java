@@ -12,10 +12,10 @@ import java.util.Collection;
 
 @Entity
 @Table(name = "dept", schema = "public", catalog = "mironchik2")
-@NamedQueries({
+@NamedQueries(value = {
         @NamedQuery(
                 name = "dept.getAll",
-                query = "SELECT deptno, dname, empsByDeptno FROM DeptEntity")
+                query = "SELECT d FROM DeptEntity d")
 })
 public class DeptEntity {
     private Integer deptno;

@@ -6,4 +6,10 @@
     <module id="EjbModule-EJB">
         <ejb>EjbModule_ejb.jar</ejb>
     </module>
+    <module id="View-Web">
+        <web>
+            <web-uri>View_war.war</web-uri>
+            <context-root>view</context-root>
+        </web>
+    </module>
 </application>

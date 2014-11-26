@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/EjbModule/EjbModule.iml" filepath="$PROJECT_DIR$/EjbModule/EjbModule.iml" />
       <module fileurl="file://$PROJECT_DIR$/ModelClient/ModelClient.iml" filepath="$PROJECT_DIR$/ModelClient/ModelClient.iml" />
       <module fileurl="file://$PROJECT_DIR$/ModelJPA/ModelJPA.iml" filepath="$PROJECT_DIR$/ModelJPA/ModelJPA.iml" />
+      <module fileurl="file://$PROJECT_DIR$/View/View.iml" filepath="$PROJECT_DIR$/View/View.iml" />
     </modules>
   </component>
 </project>

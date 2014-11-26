@@ -8,6 +8,7 @@
         <element id="artifact" artifact-name="jpa" />
       </element>
       <element id="artifact" artifact-name="EjbModule:ejb" />
+      <element id="artifact" artifact-name="View:war" />
     </root>
   </artifact>
 </component>
