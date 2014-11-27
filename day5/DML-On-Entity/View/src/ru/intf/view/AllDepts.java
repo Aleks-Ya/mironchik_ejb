@@ -11,8 +11,11 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+/**
+ * Выводит все подразделения.
+ */
 @WebServlet(name = "S1", urlPatterns = "depts")
-public class S1 extends HttpServlet {
+public class AllDepts extends HttpServlet {
 
     @EJB
     FacadeLocal f;

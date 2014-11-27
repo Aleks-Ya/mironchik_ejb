@@ -16,7 +16,11 @@ import java.util.Collection;
 @NamedQueries(value = {
         @NamedQuery(
                 name = "dept.getAll",
-                query = "SELECT d FROM DeptEntity d")
+                query = "SELECT d FROM DeptEntity d"),
+        @NamedQuery(
+                name = "dept.getBySal",
+                query = "SELECT DISTINCT d FROM DeptEntity d, IN(d.empsByDeptno) e WHERE e.sal <= :p")
+
 })
 public class DeptEntity {
     private Integer deptno;
@@ -63,7 +67,7 @@ public class DeptEntity {
         return result;
     }
 
-    @OneToMany(mappedBy = "deptByDeptno", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "deptByDeptno", fetch = FetchType.LAZY)
     public Collection<EmpEntity> getEmpsByDeptno() {
         return empsByDeptno;
     }
