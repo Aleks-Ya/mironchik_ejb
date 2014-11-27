@@ -1,5 +1,6 @@
 package ru.intf.view;
 
+import ru.intf.model.EmpEntity;
 import ru.intf.model.FacadeLocal;
 
 import javax.ejb.EJB;
@@ -25,7 +26,9 @@ public class EmpByIdServlet extends HttpServlet {
         resp.setContentType("text/html;charset=UTF-8");
         PrintWriter out = resp.getWriter();
         out.print("<html>");
-        out.print("<hr/>" + f.getEmpById(1));
+        EmpEntity emp = f.getEmpById(1);
+        out.print("<hr/>" + emp);
+        out.print("<br/>" + emp.getDeptByDeptno().getDname());
         out.print("</html>");
         out.close();
     }
