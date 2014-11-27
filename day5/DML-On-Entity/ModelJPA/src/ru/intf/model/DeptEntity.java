@@ -3,6 +3,7 @@ package ru.intf.model;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -62,7 +63,7 @@ public class DeptEntity {
         return result;
     }
 
-    @OneToMany(mappedBy = "deptByDeptno")
+    @OneToMany(mappedBy = "deptByDeptno", fetch = FetchType.EAGER)
     public Collection<EmpEntity> getEmpsByDeptno() {
         return empsByDeptno;
     }
@@ -76,7 +77,7 @@ public class DeptEntity {
         return "DeptEntity{" +
                 "deptno=" + deptno +
                 ", dname='" + dname + '\'' +
-                ", empsByDeptno=" + empsByDeptno.size() +
+                ", empsByDeptno=" + empsByDeptno +
                 '}';
     }
 }

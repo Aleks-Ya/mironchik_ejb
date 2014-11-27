@@ -87,4 +87,14 @@ public class EmpEntity {
     public void setDeptByDeptno(DeptEntity deptByDeptno) {
         this.deptByDeptno = deptByDeptno;
     }
+
+    @Override
+    public String toString() {
+        return "EmpEntity{" +
+                "empno=" + empno +
+                ", ename='" + ename + '\'' +
+                ", job='" + job + '\'' +
+                ", sal=" + sal +
+                '}';
+    }
 }
