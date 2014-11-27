@@ -30,4 +30,9 @@ public class Facade implements FacadeLocal {
         }
         return deps;
     }
+
+    @Override
+    public EmpEntity getEmpById(int id) {
+        return em.find(EmpEntity.class, id);
+    }
 }

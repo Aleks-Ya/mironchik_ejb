@@ -3,10 +3,10 @@ package ru.intf.model;
 import javax.persistence.*;
 
 /**
- * Created by aleks on 26.11.14.
+ * Служаший.
  */
 @Entity
-@Table(name = "emp", schema = "public", catalog = "mironchik2")
+@Table(name = "emp")
 public class EmpEntity {
     private Integer empno;
     private String ename;

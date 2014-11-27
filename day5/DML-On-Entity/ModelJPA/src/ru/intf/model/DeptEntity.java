@@ -11,16 +11,18 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import java.util.Collection;
 
+/**
+ * Департамент.
+ */
 @Entity
-@Table(name = "dept", schema = "public", catalog = "mironchik2")
-@NamedQueries(value = {
+@Table(name = "dept")
+@NamedQueries({
         @NamedQuery(
                 name = "dept.getAll",
                 query = "SELECT d FROM DeptEntity d"),
         @NamedQuery(
                 name = "dept.getBySal",
                 query = "SELECT DISTINCT d FROM DeptEntity d, IN(d.empsByDeptno) e WHERE e.sal <= :p")
-
 })
 public class DeptEntity {
     private Integer deptno;
