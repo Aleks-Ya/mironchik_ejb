@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component name="dataSourceStorage">
-  <data-source name="mironchik2" uuid="a5fca557-bc90-490f-ba0a-637c736a172e">
+  <data-source name="mironchik2 postgres" uuid="a5fca557-bc90-490f-ba0a-637c736a172e">
     <database-info product="PostgreSQL" version="9.3.5" jdbc-version="4.0" driver-name="PostgreSQL Native Driver" driver-version="PostgreSQL 9.3 JDBC4.1 (build 1102)">
       <identifier-quote-string>&quot;</identifier-quote-string>
     </database-info>
@@ -21,5 +21,12 @@
       <primary-key name="emp_pkey" columns="empno"/>
       <foreign-key name="deptno_fk" columns="deptno" ref-table="dept" ref-schema="public" ref-catalog="" ref-columns="deptno" update-rule="3" delete-rule="3" deferrability="2"/>
     </table>
+  </data-source>
+  <data-source name="mironchik2 user u" uuid="0fd1146c-bc22-4da4-865d-9486eaa061a8">
+    <database-info product="PostgreSQL" version="9.3.5" jdbc-version="4.0" driver-name="PostgreSQL Native Driver" driver-version="PostgreSQL 9.3 JDBC4.1 (build 1102)">
+      <identifier-quote-string>&quot;</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact"/>
+    <schema name="jpa_update" catalog="mironchik2"/>
   </data-source>
 </component>

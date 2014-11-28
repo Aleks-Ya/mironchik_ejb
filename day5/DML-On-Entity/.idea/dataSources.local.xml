@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="mironchik2" uuid="a5fca557-bc90-490f-ba0a-637c736a172e">
+    <data-source name="mironchik2 postgres" uuid="a5fca557-bc90-490f-ba0a-637c736a172e">
       <secret-storage>master_key</secret-storage>
       <user-name>postgres</user-name>
       <schema-pattern>mironchik2.public</schema-pattern>
+      <default-schemas>mironchik2.pg_catalog mironchik2.public</default-schemas>
+    </data-source>
+    <data-source name="mironchik2 user u" uuid="0fd1146c-bc22-4da4-865d-9486eaa061a8">
+      <secret-storage>master_key</secret-storage>
+      <user-name>u</user-name>
+      <schema-pattern>mironchik2.jpa_update</schema-pattern>
       <default-schemas>mironchik2.pg_catalog mironchik2.public</default-schemas>
     </data-source>
   </component>

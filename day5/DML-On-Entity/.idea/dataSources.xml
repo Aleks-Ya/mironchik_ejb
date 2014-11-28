@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="191350460">
-    <data-source source="LOCAL" name="mironchik2" read-only="true" uuid="a5fca557-bc90-490f-ba0a-637c736a172e">
+  <component name="DataSourceManagerImpl" format="xml" hash="1519846304">
+    <data-source source="LOCAL" name="mironchik2 postgres" read-only="true" uuid="a5fca557-bc90-490f-ba0a-637c736a172e">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/mironchik2</jdbc-url>
+      <libraries>
+        <library>
+          <url>file://$PROJECT_DIR$/provided_libs/postgresql-9.3-1102-jdbc41.jar</url>
+        </library>
+      </libraries>
+    </data-source>
+    <data-source source="LOCAL" name="mironchik2 user u" read-only="true" uuid="0fd1146c-bc22-4da4-865d-9486eaa061a8">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
