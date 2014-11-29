@@ -6,7 +6,7 @@ import javax.persistence.*;
  * Служаший.
  */
 @Entity
-@Table(name = "emp")
+@Table(name = "emp", schema = "public")
 public class EmpEntity {
     private Integer empno;
     private String ename;

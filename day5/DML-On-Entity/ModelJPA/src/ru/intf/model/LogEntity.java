@@ -21,7 +21,7 @@ CREATE TABLE jpa_update.log_table(
  */
 @Entity
 @Table(name = "log_table", schema = "jpa_update")
-@SequenceGenerator(name = "log_id_generator", schema = "jpa_update", sequenceName = "logid")
+@SequenceGenerator(name = "log_id_generator", schema = "jpa_update", sequenceName = "logid", allocationSize=1)
 public class LogEntity implements Serializable {
     @Id
     @GeneratedValue(generator = "log_id_generator", strategy = GenerationType.SEQUENCE)

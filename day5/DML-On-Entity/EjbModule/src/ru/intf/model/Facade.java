@@ -15,6 +15,9 @@ public class Facade implements FacadeLocal {
     @PersistenceContext(unitName = "PostgreSQLxa")
     EntityManager em;
 
+    @PersistenceContext(unitName = "PostgreSQLxa-user-u")
+    EntityManager emU;
+
     @Override
     public List<DeptEntity> getDeptAll() {
         return em.createNamedQuery("dept.getAll", DeptEntity.class).getResultList();
@@ -34,5 +37,19 @@ public class Facade implements FacadeLocal {
     @Override
     public EmpEntity getEmpById(int id) {
         return em.find(EmpEntity.class, id);
+    }
+
+    @Override
+    public void updateEmp(int empno, BigDecimal salary) {
+        EmpEntity emp = getEmpById(empno);
+        int newSal = salary.intValue();
+        int oldSal = emp.getSal();
+        emp.setSal(newSal);
+        em.merge(emp);
+
+        LogEntity log = new LogEntity();
+        log.setMessage(String.format("Зарплата изменена у id=%d с %d на %d.", empno, oldSal, newSal));
+        /* Выполнение команды требует установки параметра PostgreSQL max_prepared_transactions > 0 */
+        emU.persist(log);
     }
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="1519846304">
+  <component name="DataSourceManagerImpl" format="xml" hash="3089038038">
     <data-source source="LOCAL" name="mironchik2 postgres" read-only="true" uuid="a5fca557-bc90-490f-ba0a-637c736a172e">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>

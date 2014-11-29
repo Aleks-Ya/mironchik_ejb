@@ -3,4 +3,7 @@
     <persistence-unit name="PostgreSQLxa">
         <jta-data-source>java:/jdbc/postgres-xa</jta-data-source>
     </persistence-unit>
+    <persistence-unit name="PostgreSQLxa-user-u">
+        <jta-data-source>java:/jdbc/postgres-xa-user-u</jta-data-source>
+    </persistence-unit>
 </persistence>

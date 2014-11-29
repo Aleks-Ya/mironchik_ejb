@@ -7,6 +7,7 @@
         <setting name="provider-name" value="" />
         <datasource-mapping>
           <factory-entry name="PostgreSQLxa" value="a5fca557-bc90-490f-ba0a-637c736a172e" />
+          <factory-entry name="PostgreSQLxa-u" value="0fd1146c-bc22-4da4-865d-9486eaa061a8" />
           <factory-entry name="noname-persistence.xml@177" value="a5fca557-bc90-490f-ba0a-637c736a172e" />
         </datasource-mapping>
         <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/META-INF/persistence.xml" />
