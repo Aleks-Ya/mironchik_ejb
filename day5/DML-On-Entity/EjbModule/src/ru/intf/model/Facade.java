@@ -1,5 +1,6 @@
 package ru.intf.model;
 
+import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -15,8 +16,8 @@ public class Facade implements FacadeLocal {
     @PersistenceContext(unitName = "PostgreSQLxa")
     EntityManager em;
 
-    @PersistenceContext(unitName = "PostgreSQLxa-user-u")
-    EntityManager emU;
+    @EJB
+    LogLocal logger;
 
     @Override
     public List<DeptEntity> getDeptAll() {
@@ -47,9 +48,6 @@ public class Facade implements FacadeLocal {
         emp.setSal(newSal);
         em.merge(emp);
 
-        LogEntity log = new LogEntity();
-        log.setMessage(String.format("Зарплата изменена у id=%d с %d на %d.", empno, oldSal, newSal));
-        /* Выполнение команды требует установки параметра PostgreSQL max_prepared_transactions > 0 */
-        emU.persist(log);
+        logger.log(String.format("Зарплата изменена у id=%d с %d на %d.", empno, oldSal, newSal));
     }
 }

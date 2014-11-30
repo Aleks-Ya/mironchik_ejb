@@ -1,5 +1,6 @@
 package ru.intf.model;
 
+import javax.ejb.Asynchronous;
 import javax.ejb.Singleton;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -13,6 +14,7 @@ public class LogBean implements LogLocal {
     EntityManager emU;
 
     @Override
+    @Asynchronous
     public void log(String message) {
         LogEntity log = new LogEntity();
         log.setMessage(message);
