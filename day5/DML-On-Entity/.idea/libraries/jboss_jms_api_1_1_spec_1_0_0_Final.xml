@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="jboss-jms-api_1.1_spec-1.0.0.Final">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/provided_libs/jboss-jms-api_1.1_spec-1.0.0.Final.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ideaLibSources/jboss-jms-api_1.1_spec-1.0.0.Final-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

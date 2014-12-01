@@ -20,5 +20,6 @@
     <orderEntry type="module" module-name="ModelJPA" />
     <orderEntry type="library" scope="PROVIDED" name="hibernate" level="project" />
     <orderEntry type="library" name="jboss-ejb-api_3.1_spec-1.0.1.Final" level="project" />
+    <orderEntry type="library" name="jboss-jms-api_1.1_spec-1.0.0.Final" level="project" />
   </component>
 </module>
